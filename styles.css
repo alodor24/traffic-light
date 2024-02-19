@@ -1,0 +1,23 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nova+Square&display=swap");
+
+/* Variables */
+:root {
+  --color-green: #64dd17;
+  --color-orange: #ff9800;
+  --color-red: #f44336;
+  --color-white: #fff;
+  --color-dark: #212121;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* .micro-5-regular {
+  font-family: "Micro 5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+} */
