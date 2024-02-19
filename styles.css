@@ -16,8 +16,44 @@
   font-family: "Montserrat", sans-serif;
 }
 
+body {
+  background-color: var(--color-dark);
+}
+
+.container {
+  max-width: 1200px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+.container-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.box {
+  min-height: 300px;
+  border: solid var(--color-white) 1px;
+  border-radius: 1rem;
+}
+
 /* .micro-5-regular {
   font-family: "Micro 5", sans-serif;
   font-weight: 400;
   font-style: normal;
 } */
+
+@media (max-width: 540px) {
+  .container-box {
+    grid-template-columns: 1fr;
+  }
+}
