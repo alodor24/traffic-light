@@ -1,5 +1,6 @@
 import changeLight from "./changeLight.js";
 
+// TODO: Refactor this code
 const redTrafficLight1 = document.querySelector("#board-1 .red-light");
 const orangeTrafficLight1 = document.querySelector("#board-1 .orange-light");
 const greenTrafficLight1 = document.querySelector("#board-1 .green-light");
@@ -70,6 +71,14 @@ const stopTrafficLights = () => {
   isRunning = false;
   timeoutIds.forEach((id) => clearTimeout(id));
   timeoutIds = [];
+
+  // TODO: Refactor this code
+  changeLight(greenTrafficLight1, false);
+  changeLight(orangeTrafficLight1, false);
+  changeLight(redTrafficLight1, false);
+  changeLight(greenTrafficLight2, false);
+  changeLight(orangeTrafficLight2, false);
+  changeLight(redTrafficLight2, false);
 };
 
 export { startTrafficLights, stopTrafficLights };
