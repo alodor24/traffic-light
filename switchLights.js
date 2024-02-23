@@ -11,8 +11,8 @@ const greenTrafficLight2 = document.querySelector("#board-2 .green-light");
 let isRunning = false;
 let timeoutIds = [];
 
-const longLightDuration = 4000;
-const shortLightDuration = 1000;
+const longLightDuration = 10000;
+const shortLightDuration = 1500;
 
 const switchLights = () => {
   if (!isRunning) return;
