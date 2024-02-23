@@ -4,10 +4,13 @@
 /* Variables */
 :root {
   --color-green: #64dd17;
+  --color-green-dark: #004d40;
   --color-orange: #ff9800;
   --color-red: #f44336;
   --color-white: #fff;
+  --color-white-transparent: rgba(255, 255, 255, 0.5);
   --color-dark: #212121;
+  --color-grey-dark: #263238;
 }
 
 * {
@@ -32,6 +35,37 @@ body {
   margin-top: 2rem;
   margin-bottom: 2rem;
   color: var(--color-white);
+}
+
+.box-btn {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.box-btn .btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  appearance: none;
+  border: none;
+}
+
+.box-btn :not(.btn:disabled) {
+  cursor: pointer;
+  background: var(--color-green-dark);
+  color: var(--color-white);
+  transition: all 0.3s ease-in-out;
+}
+
+.box-btn :not(.btn:disabled):hover {
+  transform: scale(0.95);
+}
+
+.box-btn .btn:disabled {
+  cursor: not-allowed;
+  background: var(--color-grey-dark);
+  color: var(--color-white-transparent);
 }
 
 .container-box {
