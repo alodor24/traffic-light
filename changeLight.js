@@ -7,4 +7,8 @@ const changeLight = (element, status) => {
   element.classList.remove("active");
 };
 
-export default changeLight;
+const changeColorIcon = (element, color) => {
+  element.style.fill = color;
+};
+
+export { changeLight, changeColorIcon };
