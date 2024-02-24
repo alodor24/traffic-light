@@ -1,4 +1,5 @@
 import { changeLight, changeColorIcon } from "./changeLight.js";
+import { startTimer, stopTimer } from "./timer.js";
 
 // TODO: Refactor this code
 const redTrafficLight1 = document.querySelector("#board-1 .red-light");
@@ -13,6 +14,9 @@ const bikeIcon1 = document.querySelector("#board-1 .bike-icon svg path");
 const personIcon2 = document.querySelector("#board-2 .person-icon svg path");
 const bikeIcon2 = document.querySelector("#board-2 .bike-icon svg path");
 
+const timer1 = document.querySelector("#board-1 .timer");
+const timer2 = document.querySelector("#board-2 .timer");
+
 const redLightColor = "#f44336";
 const greenLightColor = "#64dd17";
 const defaultLightColor = "#212121";
@@ -20,7 +24,7 @@ const defaultLightColor = "#212121";
 let isRunning = false;
 let timeoutIds = [];
 
-const longLightDuration = 5000;
+const longLightDuration = 15000;
 const shortLightDuration = 1500;
 
 const switchLights = () => {
@@ -34,6 +38,11 @@ const switchLights = () => {
   changeColorIcon(personIcon2, redLightColor);
   changeColorIcon(bikeIcon2, redLightColor);
 
+  timer1.style.color = greenLightColor;
+  timer2.style.color = redLightColor;
+
+  startTimer(timer1, timer2, longLightDuration);
+
   timeoutIds.push(
     setTimeout(() => {
       changeLight(greenTrafficLight1, false);
@@ -43,10 +52,17 @@ const switchLights = () => {
       changeColorIcon(personIcon1, redLightColor);
       changeColorIcon(bikeIcon1, redLightColor);
 
+      timer1.style.color = redLightColor;
+      timer2.style.color = redLightColor;
+
       timeoutIds.push(
         setTimeout(() => {
           changeLight(orangeTrafficLight1, false);
           changeLight(redTrafficLight1, true);
+
+          timer1.style.color = redLightColor;
+          timer2.style.color = greenLightColor;
+          startTimer(timer1, timer2, longLightDuration);
 
           changeLight(orangeTrafficLight2, false);
           changeLight(redTrafficLight2, false);
@@ -63,6 +79,8 @@ const switchLights = () => {
 
               changeColorIcon(personIcon2, redLightColor);
               changeColorIcon(bikeIcon2, redLightColor);
+
+              timer2.style.color = redLightColor;
 
               timeoutIds.push(
                 setTimeout(() => {
@@ -105,6 +123,12 @@ const stopTrafficLights = () => {
   changeLight(greenTrafficLight2, false);
   changeLight(orangeTrafficLight2, false);
   changeLight(redTrafficLight2, false);
+
+  timer1.style.color = defaultLightColor;
+  timer1.innerText = "--";
+  timer2.style.color = defaultLightColor;
+  timer2.innerText = "--";
+  stopTimer();
 };
 
 export { startTrafficLights, stopTrafficLights };
