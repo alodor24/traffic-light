@@ -12,13 +12,12 @@ const redLightColor = "#f44336";
 const greenLightColor = "#64dd17";
 const defaultLightColor = "#212121";
 
-const longLightDuration = 5000;
 const shortLightDuration = 1500;
 
 let isRunning = false;
 let timeoutIds = [];
 
-const switchLights = () => {
+const switchLights = (longLightDuration) => {
   if (!isRunning) return;
 
   changeLight(greenLights[0], true);
@@ -77,7 +76,7 @@ const switchLights = () => {
                   changeLight(orangeLights[1], false);
                   changeLight(redLights[0], false);
 
-                  switchLights();
+                  switchLights(longLightDuration);
                 }, shortLightDuration)
               );
             }, longLightDuration)
@@ -88,10 +87,10 @@ const switchLights = () => {
   );
 };
 
-const startTrafficLights = () => {
+const startTrafficLights = (longLightDuration) => {
   if (!isRunning) {
     isRunning = true;
-    switchLights();
+    switchLights(longLightDuration);
   }
 };
 

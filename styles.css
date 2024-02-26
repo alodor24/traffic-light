@@ -37,6 +37,32 @@ body {
   color: var(--color-white);
 }
 
+.box-timer {
+  margin-bottom: 2rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.box-timer label {
+  margin-bottom: 0.5rem;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.box-timer span {
+  margin-top: 0.2rem;
+  font-size: 12px;
+  color: var(--color-red);
+}
+
+.box-timer input {
+  width: 15rem;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 .box-btn {
   display: flex;
   gap: 1rem;

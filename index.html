@@ -12,8 +12,20 @@
     <main class="container">
       <h1 class="title">Semáforo en funcionamiento</h1>
 
+      <section class="box-timer">
+        <label>Duración:</label>
+        <input
+          id="time-value"
+          type="number"
+          placeholder="Ingrese un valor entre 10 y 99"
+          min="10"
+          max="99"
+        />
+        <span id="error"></span>
+      </section>
+
       <section class="box-btn">
-        <button id="start" class="btn">INICIAR</button>
+        <button id="start" class="btn" disabled>INICIAR</button>
         <button id="stop" class="btn" disabled>DETENER</button>
       </section>
 
